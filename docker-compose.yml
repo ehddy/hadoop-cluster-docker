@@ -1,3 +1,4 @@
+# docker-compose up 후에 nn 컨테이너에서 start-all 명령어 실행
 version: "3.6"
 services:
   nn:
