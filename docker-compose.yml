@@ -2,11 +2,12 @@
 version: "3.6"
 services:
   nn:
-    image: centos:hadoop
+    image: ehddy/hadoop-cluster-centos
     container_name: nn
     ports:
       - 50070:50070
       - 8088:8088
+      - 10020:10020 
     depends_on:
       - dn1
       - dn2
@@ -16,7 +17,7 @@ services:
     command: tail -f /dev/null
   
   dn1:
-    image: centos:hadoop
+    image: ehddy/hadoop-cluster-centos
     container_name: dn1
     volumes:
       - ./shared-volume:/shared-volume
@@ -24,7 +25,7 @@ services:
     command: tail -f /dev/null
   
   dn2:
-    image: centos:hadoop
+    image: ehddy/hadoop-cluster-centos
     container_name: dn2
     volumes:
       - ./shared-volume:/shared-volume
@@ -32,7 +33,7 @@ services:
     command: tail -f /dev/null
 
   dn3:
-    image: centos:hadoop
+    image: ehddy/hadoop-cluster-centos
     container_name: dn3
     volumes:
       - ./shared-volume:/shared-volume
